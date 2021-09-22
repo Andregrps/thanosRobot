@@ -59,16 +59,19 @@ void setup() {
     }
 
     // Verifica se o inimigo está pertinho, frente esquerda ou frente direita
-    if (betweenOr(_FrontRight, _FrontLeft, 2, 10))
+    if (betweenOr(_FrontRight, _FrontLeft, 2, 10)) {
       action = 4;
+    }
 
     // Verifica se os dois sensores da lateral está dentro do range, e define a ação para o mais perto
-    if (betweenAnd(_SideRight, _SideLeft, 2, 50))  
+    if (betweenAnd(_SideRight, _SideLeft, 2, 50)) {
       action = sensor[_SideRight] > sensor[_SideLeft] ? 3 : 2;
+    }
 
     // verifica se o inimigo está longe, frente esquerda ou frente direita
-    if (betweenOr(_FrontRight, _FrontLeft, 50, 70))
-      action = 5;
+    if (betweenOr(_FrontRight, _FrontLeft, 50, 70)) {      action = 5;
+
+    }    
 
     // Define uma variavel para inverter a rotação do robo ao detectar na lateral
     volatile bool saveSpin;
